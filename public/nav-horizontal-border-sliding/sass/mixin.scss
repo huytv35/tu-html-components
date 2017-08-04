@@ -1,0 +1,199 @@
+@mixin mediaQueryMax($args...){
+    @if length($args) == 1{
+        @media (max-width:nth($args,1)){
+            @content;
+        }
+    } 
+    @else{
+        @media (max-width:nth($args,1)) and (min-width:nth($args,2)){
+            @content;
+        }
+    }
+}
+@mixin mediaQueryMin($args...){
+    @if length($args) == 1{
+        @media (min-width:nth($args,1)){
+            @content;
+        }
+    } 
+    @else{
+        @media (min-width:nth($args,1)) and (min-width:nth($args,2)){
+            @content;
+        }
+    }
+}
+@mixin transition() {
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+@mixin transition-time($time) {
+    -moz-transition: all $time ease-in-out;
+    -o-transition: all $time ease-in-out;
+    -webkit-transition: all $time ease-in-out;
+    transition: all $time ease-in-out;
+}
+@mixin keyframes( $animationName ){
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+@mixin fixedFull {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+@mixin blockFixed ($top, $bottom, $left, $right, $zIndex) {
+    display: block;
+    position: fixed;
+    top: $top;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+    z-index: $zIndex;
+}
+
+@mixin absoluteFull {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+@mixin absoluteItemCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+}
+
+@mixin backgroundCoverCenter {
+    background-size: cover;
+    background-position: center center;
+}
+
+@mixin flex {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+}
+
+@mixin alignStart {
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    align-items: flex-start;
+}
+@mixin alignCenter {
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+}
+@mixin alignEnd {
+    -webkit-align-items: flex-end;
+    -moz-align-items: flex-end;
+    align-items: flex-end;
+}
+
+@mixin flexAlignStart {
+    @include flex;
+    @include alignStart;
+}
+@mixin flexAlignCenter {
+    @include flex;
+    @include alignCenter;
+}
+@mixin flexAlignEnd {
+    @include flex;
+    @include alignEnd;
+}
+
+@mixin justifyStar {
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    justify-content: flex-start;
+}
+@mixin justifyCenter {
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+}
+@mixin justifyEnd {
+    -webkit-justify-content: flex-end;
+    -moz-justify-content: flex-end;
+    justify-content: flex-end;
+}
+
+@mixin flexContentStart {
+    @include flex;
+    @include justifyStart;
+}
+@mixin flexContentEnd {
+    @include flex;
+    @include justifyEnd;
+}
+@mixin flexContentCenter {
+    @include flex;
+    @include justifyCenter;
+}
+
+@mixin boxFlexItemCenter {
+    @include flex;
+    @include alignCenter;
+    @include justifyCenter;
+}
+
+@mixin transition($value) {
+    -webkit-transition: $value;
+    -moz-transition: $value;
+    transition: $value;
+}
+
+@mixin animation($value) {
+    -webkit-animation: $value;
+    -moz-animation: $value;
+    -o-animation: $value;
+    -ms-animation: $value;
+}
+
+// transform
+@mixin transform($value) {
+    -webkit-transform: $value;
+    -moz-transform: $value;
+    transform: $value;
+}
+@mixin mediaMaxWidth($w_width) {
+    @media only screen and (max-width: $w_width) {
+        @content;
+    }
+}
+@mixin mediaMinWidth($w_width) {
+    @media only screen and (min-width: $w_width) {
+        @content;
+    }
+}
+
+/*
+example keyframes
+@include keyframes( incrediblehulk ){
+    0% {
+        color: #f8d2c0;
+    }
+    100% {
+        color: #0f0;
+    }
+}*/
