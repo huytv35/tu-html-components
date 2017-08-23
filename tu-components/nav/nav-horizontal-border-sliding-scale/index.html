@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nav-horizontal-border-sliding</title>
+    <link rel="stylesheet" href="../../../bower_components/tu-stylesheets-init/init.css">
+    <style>
+        .nav-wrap { margin-top: 30px; padding: 40px; background-color: #FA7020; }
+        .nav-wrap a { font-family: 'Roboto', sans-serif; }
+        
+        .navHor { position: relative; z-index: 10; margin-left: -20px; opacity: 0; overflow: hidden; }
+        .navHor.is--visible { opacity: 1; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
+        
+        .navHor .item a { color: #FFFFFF; font-size: 14px; line-height: 16px; letter-spacing: 0.3px; -webkit-transition: all 0.25s ease; -moz-transition: all 0.25s ease; transition: all 0.25s ease; }
+        
+        .navHor .item { position: relative; float: left; padding: 0 20px 15px; -webkit-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; }
+        .navHor .item.is--active2 a { font-weight: 300; font-size: 24px; line-height: 28px; }
+        .navHor .item.is--active a, .navHor .item.is--active2 a { font-family: 'Roboto', sans-serif; font-weight: 300; font-size: 24px; line-height: 28px; opacity: 1; }
+
+        /*# sourceMappingURL=style.css.map */               
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="nav-wrap">
+            <!-- Nav -->
+            <ul id="nav_hor_sliding_scale" class="navHor is-border-sliding">
+                <li class="item"><a href="#">Sản phẩm</a></li>
+                <li class="item is-active"><a href="#">Dịch vụ</a></li>
+                <li class="item"><a href="#">Hỗ trợ khách hàng</a></li>
+                <li class="item"><a href="#">Đơn hàng</a></li>
+            </ul>
+            <!-- End Nav -->
+        </nav>
+    </div>
+
+    <script src="../../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/scripts/nav-horizontal-border-sliding-scale.js"></script>
+</body>
+
+</html>

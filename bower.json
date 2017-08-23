@@ -1,0 +1,31 @@
+{
+  "name": "tu-components-demo",
+  "homepage": "https://github.com/huytv35/tu-html-components",
+  "authors": [
+    "tu"
+  ],
+  "description": "library nescessaries for project",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "swiper": "Swiper#^3.4.2",
+    "fancybox": "^3.1.20",
+    "modernizr": "^3.5.0",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "jquery-ui": "^1.12.1",
+    "jquery_lazyload": "^1.9.1"
+  },
+  "devDependencies": {
+    "tu-stylesheets-init": "*"
+  }
+}
