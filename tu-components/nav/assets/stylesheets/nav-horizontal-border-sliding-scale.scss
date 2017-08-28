@@ -1,0 +1,52 @@
+@import '../../../../bower_components/tu-stylesheets-init/base/mixin.scss';
+
+.nav-wrap {
+    margin-top: 30px;
+    padding: 40px;
+    background-color: #FA7020;
+
+    a {
+        font-family: 'Roboto', sans-serif;
+    }
+}
+.navHor {
+    position: relative;
+    z-index: 10; 
+    margin-left: -20px;
+    opacity: 0;
+    overflow: hidden;
+    &.is--visible {
+        opacity: 1;
+        @include transition(all .2s ease-in-out);
+    }
+}
+.navHor .item a {
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.3px;
+    @include transition(all .25s ease);
+}
+.navHor .item {
+    position: relative;
+    float: left;
+    padding: 0 20px 15px;
+    @include transition(all .5s ease-in-out);
+    &.is--active2 {
+        a {
+            font-weight: 300;
+            font-size  : 24px;
+            line-height: 28px;
+        }
+    }
+    &.is--active,
+    &.is--active2 {
+        a {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 24px;
+            line-height: 28px;
+            opacity: 1;
+        }
+    }
+}
